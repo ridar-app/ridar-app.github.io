@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
 
   <!-- אימות Google Ads / AdSense -->
   <meta name="google-adsense-account" content="ca-pub-8211805219111881">
 
-  <meta http-equiv="refresh" content="0; URL=https://ridar.base44.app" />
   <title>Redirecting...</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 120px;
+      background: #0d1b2a;
+      color: white;
+    }
+    .loader {
+      border: 6px solid #ffffff33;
+      border-top: 6px solid #00d4ff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: 30px auto;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .msg {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = "https://ridar.base44.app";
+    }, 2500);
+  </script>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 40px;">
-  מעביר אותך אל RidAR…
+
+<body>
+  <div class="msg">מעביר אותך אל RidAR…</div>
+  <div class="loader"></div>
 </body>
 </html>
