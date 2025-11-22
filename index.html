@@ -6,10 +6,12 @@
   <!-- אימות Google Ads / AdSense -->
   <meta name="google-adsense-account" content="ca-pub-8211805219111881">
 
-  <!-- סקריפט AdSense לאוטו-מודעות (Auto Ads) -->
+  <!-- Auto Ads של AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8211805219111881" crossorigin="anonymous"></script>
 
-  <title>RidAR — מאתרים אופניים גנובים</title>
+  <title>RidAR - קהילה שמחזירה אופניים גנובים</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     * {
@@ -20,39 +22,44 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: radial-gradient(circle at top, #00d4ff 0, #0d1b2a 45%, #050814 100%);
+      background: #050814;
       color: #ffffff;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
     }
 
-    .wrapper {
-      width: 100%;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
       max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 16px 40px;
     }
 
-    .card {
-      background: rgba(6, 16, 32, 0.92);
-      border-radius: 18px;
-      padding: 32px 24px 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    /* HERO */
+
+    .hero {
+      background: radial-gradient(circle at top, #00d4ff 0, #0d1b2a 45%, #050814 100%);
+      border-radius: 20px;
+      padding: 24px 18px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
       border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .brand {
+    .brand-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       background: linear-gradient(135deg, #00d4ff, #ff004c);
       display: flex;
       align-items: center;
@@ -62,124 +69,215 @@
       letter-spacing: 0.5px;
     }
 
-    .brand-name {
+    .brand-text-main {
       font-size: 22px;
       font-weight: 700;
     }
 
-    .brand-sub {
+    .brand-text-sub {
       font-size: 13px;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
-    .content {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    h1 {
-      font-size: 30px;
+    .hero-title {
+      font-size: 24px;
+      line-height: 1.4;
       margin-bottom: 10px;
     }
 
-    .subtitle {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-bottom: 18px;
-      line-height: 1.6;
+    @media (min-width: 600px) {
+      .hero-title {
+        font-size: 28px;
+      }
     }
 
-    .bullets {
-      list-style: none;
-      margin-bottom: 24px;
-    }
-
-    .bullets li {
-      margin-bottom: 6px;
-      font-size: 14px;
-      opacity: 0.95;
-    }
-
-    .bullets li::before {
-      content: "•";
-      margin-left: 6px;
-      color: #00d4ff;
-      font-weight: bold;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .cta-main {
-      background: #ff004c;
-      color: #ffffff;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 26px;
+    .hero-subtitle {
       font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 25px rgba(255, 0, 76, 0.5);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      opacity: 0.92;
+      line-height: 1.7;
+      margin-bottom: 16px;
     }
 
-    .cta-main:hover {
-      transform: translateY(-1px);
-      background: #ff2766;
-      box-shadow: 0 14px 32px rgba(255, 0, 76, 0.75);
+    .hero-highlight {
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
 
-    .cta-main span.icon {
-      font-size: 18px;
+    .hero-highlight b {
+      color: #00f4ff;
     }
 
-    .cta-note {
-      font-size: 13px;
+    .hero-note {
+      font-size: 12px;
       opacity: 0.8;
     }
 
-    .ad-panel {
-      background: rgba(3, 10, 22, 0.9);
-      border-radius: 14px;
-      padding: 16px 14px 10px;
-      border: 1px dashed rgba(255, 255, 255, 0.12);
+    /* SECTIONS */
+
+    .section {
+      background: #070d1a;
+      border-radius: 16px;
+      padding: 18px 14px 18px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
     }
 
-    .ad-title {
-      font-size: 13px;
-      opacity: 0.75;
-      margin-bottom: 6px;
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
-    .ad-box {
-      background: rgba(10, 20, 40, 0.95);
-      border-radius: 10px;
-      min-height: 120px;
+    .section-subtitle {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+
+    .steps {
+      list-style: none;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .steps li {
+      margin-bottom: 8px;
       display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .steps li span.step-number {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, 0.14);
+      border: 1px solid rgba(0, 212, 255, 0.5);
       font-size: 12px;
-      opacity: 0.7;
+      margin-top: 2px;
     }
 
-    .footer-note {
+    .steps li span.step-text {
+      flex: 1;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 5px 9px;
+      background: rgba(255, 255, 255, 0.04);
+      opacity: 0.9;
+    }
+
+    .good-karma {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .good-karma b {
+      color: #00f4ff;
+    }
+
+    .quote {
+      border-right: 3px solid #00d4ff;
+      padding-right: 10px;
+      margin-top: 8px;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      background: radial-gradient(circle at top, #151f3c 0, #070d1a 40%, #050814 100%);
+      border-radius: 18px;
+      padding: 22px 16px 22px;
       margin-top: 10px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .cta-text {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 999px;
+      border: none;
+      background: #ff004c;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 16px 34px rgba(255, 0, 76, 0.7);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .cta-btn span.icon {
+      font-size: 18px;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-1px);
+      background: #ff2b67;
+      box-shadow: 0 22px 40px rgba(255, 0, 76, 0.85);
+    }
+
+    .cta-footnote {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      margin-top: 16px;
       font-size: 11px;
       opacity: 0.6;
       text-align: center;
@@ -188,55 +286,136 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="card">
-      <div class="brand">
+  <div class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="brand-row">
         <div class="brand-logo">R</div>
         <div>
-          <div class="brand-name">RidAR</div>
-          <div class="brand-sub">קהילה שמחזירה אופניים גנובים לבעלים – בעזרת AI</div>
+          <div class="brand-text-main">RidAR</div>
+          <div class="brand-text-sub">קהילה שמחזירה אופניים גנובים לבעלים – בעזרת בינה מלאכותית</div>
         </div>
       </div>
 
-      <div class="content">
-        <!-- טקסט וקריאה לפעולה -->
-        <div>
-          <h1>ראיתם אופניים או קורקינט חשודים? יכול להיות שהצלתם למישהו את היום.</h1>
-          <p class="subtitle">
-            RidAR מחברת בין מי שאיבדו אופניים לבין מי שמצאו כאלה שנראות "בדוק גנובות". דיווח קצר, תמונה אחת – והמערכת שלנו
-            עושה את כל הצלבת הנתונים בשבילכם.
-          </p>
+      <h1 class="hero-title">
+        ראיתם אופניים או קורקינט חשודים?<br>
+        יכול להיות שהצלתם למישהו את היום.
+      </h1>
 
-          <ul class="bullets">
-            <li>מדווחים בקלות על גניבה או מציאה של אופניים/קורקינט.</li>
-            <li>המערכת בודקת התאמות בעזרת ניתוח תמונה מבוסס בינה מלאכותית.</li>
-            <li>אם יש התאמה – הבעלים מקבלים מיקום וקשר ישירות אליכם.</li>
-          </ul>
+      <p class="hero-subtitle">
+        RidAR מחברת בין מי שאיבדו אופניים לבין מי שמצאו כאלה שנראות "בדוק גנובות". אתם מדווחים,
+        מצרפים תמונה – והמערכת שלנו סורקת את כל הדיווחים ומחפשת התאמה.
+      </p>
 
-          <div class="cta-row">
-            <a class="cta-main" href="https://ridar.base44.app" target="_blank" rel="noopener">
-              <span class="icon">🚲</span>
-              <span>כניסה ל-RidAR</span>
-            </a>
-            <div class="cta-note">
-              מעשה טוב אחד קטן, יכול להחזיר אופניים שלמות למישהו אחר.
-            </div>
-          </div>
-        </div>
+      <div class="hero-highlight">
+        <b>חשוב לדעת:</b> הדף הזה הוא דף נחיתה של הקהילה. כאן אתם קוראים, מבינים את הקונספט,
+        ורק בסוף מחליטים להיכנס לאפליקציה עצמה.
+      </div>
 
-        <!-- אזור לפרסומות AdSense (Auto Ads יטפלו בתוכן בפועל) -->
-        <div>
-          <div class="ad-panel">
-            <div class="ad-title">אזור לפרסומות רלוונטיות (AdSense)</div>
-            <div class="ad-box">
-              ייתכן שייקח קצת זמן עד שגוגל תתחיל להציג כאן מודעות בפועל.
-            </div>
-          </div>
-          <div class="footer-note">
-            הדף הזה מתארח ב־ridar-app.github.io ומפנה לאפליקציית RidAR.
-          </div>
+      <div class="hero-note">
+        גללו למטה כדי להבין איך זה עובד, למה הקהילה הזאת כל כך חזקה – ואיך גם אתם יכולים לעשות מעשה טוב אחד קטן.
+      </div>
+    </section>
+
+    <!-- איך זה עובד -->
+    <section class="section">
+      <div class="section-title">איך RidAR עובדת?</div>
+      <div class="section-subtitle">
+        המטרה: לחבר בין מי שנשארו בלי אופניים לבין מי שלא התעלם ובחר לדווח.
+      </div>
+
+      <ul class="steps">
+        <li>
+          <span class="step-number">1</span>
+          <span class="step-text">
+            <b>מעלים דיווח על אופניים גנובים או חשודים:</b> ממלאים כמה פרטים בסיסיים, מוסיפים תמונה ברורה,
+            ומאשרים שניתן ליצור אתכם קשר במקרה של התאמה.
+          </span>
+        </li>
+        <li>
+          <span class="step-number">2</span>
+          <span class="step-text">
+            <b>המערכת מנתחת את התמונה:</b> בעזרת בינה מלאכותית אנחנו בודקים צבעים, חלקים ייחודיים, מדבקות,
+            סימנים על השלדה ועוד – ומשווים לכל הדיווחים במערכת.
+          </span>
+        </li>
+        <li>
+          <span class="step-number">3</span>
+          <span class="step-text">
+            <b>נמצאה התאמה?</b> הבעלים מקבלים מיקום, פרטי קשר, ואפשרות לייצר שיחה ישירה מול מי שדיווח.
+          </span>
+        </li>
+      </ul>
+
+      <div class="pill-row">
+        <div class="pill">ללא עלות</div>
+        <div class="pill">מונע סחר באופניים גנובים</div>
+        <div class="pill">מבוסס על קהילה</div>
+        <div class="pill">נשען על בינה מלאכותית</div>
+      </div>
+    </section>
+
+    <!-- קארמה טובה -->
+    <section class="section">
+      <div class="section-title">מעשה טוב אחד, קהילה שלמה מאחוריכם</div>
+      <p class="good-karma">
+        כל דיווח קטן שאתם משאירים ב-RidAR הוא <b>מעשה טוב</b> אמיתי: מישהו אחר יכול לקבל בחזרה
+        את האופניים שלו, את התחבורה היומיומית שלו, ואת התחושה שמישהו שם לב ולא נשאר אדיש.
+      </p>
+      <div class="quote">
+        "דיווח של דקה בשבילך יכול להיות החיוך הכי גדול של מישהו אחר היום."
+      </div>
+    </section>
+
+    <!-- שאלות נפוצות -->
+    <section class="section">
+      <div class="section-title">שאלות שעולות כמעט תמיד</div>
+
+      <div class="faq-item">
+        <div class="faq-q">האם הפרטים שלי גלויים לכולם?</div>
+        <div class="faq-a">
+          לא. פרטי יצירת הקשר שלך יועברו רק לבעל האופניים במקרה שנמצאת התאמה, כדי שיוכלו להגיע אליך
+          ואל המיקום שדיווחתם עליו – לא מעבר לזה.
         </div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q">מה אם אני לא בטוח שזה באמת גנוב?</div>
+        <div class="faq-a">
+          זה בסדר גמור. המערכת בנויה להתמודד גם עם אי-ודאות. אם משהו "לא נראה לכם" – עדיף לדווח מאשר להתעלם.
+          במקרה הכי גרוע לא תימצא התאמה, במקרה הטוב – החזרנו אופניים הביתה.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">זה מיועד רק לאופניים?</div>
+        <div class="faq-a">
+          כרגע המיקוד הוא בעיקר באופניים וקורקינטים. בהמשך אפשר יהיה להתרחב לעוד סוגי כלי תחבורה אישיים.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA סופי -->
+    <section class="cta-section">
+      <div class="cta-title">מוכנים להצטרף לקהילה שלא נשארת אדישה?</div>
+      <div class="cta-text">
+        אם איבדתם אופניים, ראיתם זוג חשוד קשור במקום מוזר, או פשוט רוצים להיות חלק מקהילה שעושה טוב –
+        השלב הבא הוא להיכנס ל-RidAR ולהתחיל לדווח או לחפש התאמות.
+      </div>
+
+      <a class="cta-btn" href="https://ridar.base44.app" target="_blank" rel="noopener">
+        <span class="icon">🚲</span>
+        <span>כניסה ל-RidAR</span>
+      </a>
+
+      <div class="cta-footnote">
+        הכניסה לאפליקציה תיפתח בלשונית חדשה. תוכלו תמיד לחזור לכאן דרך הקישור <br>
+        <b>ridar-app.github.io</b>.
+      </div>
+    </section>
+
+    <div class="footer">
+      הדף מתארח ב-GitHub Pages תחת הדומיין ridar-app.github.io ומשמש כדף נחיתה לקהילת RidAR.
     </div>
   </div>
 </body>
