@@ -1,49 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8">
 
   <!-- אימות Google Ads / AdSense -->
   <meta name="google-adsense-account" content="ca-pub-8211805219111881">
 
-  <title>Redirecting...</title>
+  <!-- סקריפט AdSense לאוטו-מודעות (Auto Ads) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8211805219111881" crossorigin="anonymous"></script>
+
+  <title>RidAR — מאתרים אופניים גנובים</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 120px;
-      background: #0d1b2a;
-      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top, #00d4ff 0, #0d1b2a 45%, #050814 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
     }
-    .loader {
-      border: 6px solid #ffffff33;
-      border-top: 6px solid #00d4ff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      margin: 30px auto;
-      animation: spin 1s linear infinite;
+
+    .wrapper {
+      width: 100%;
+      max-width: 960px;
     }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+
+    .card {
+      background: rgba(6, 16, 32, 0.92);
+      border-radius: 18px;
+      padding: 32px 24px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .msg {
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00d4ff, #ff004c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-name {
       font-size: 22px;
-      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .bullets {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .bullets li {
+      margin-bottom: 6px;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    .bullets li::before {
+      content: "•";
+      margin-left: 6px;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .cta-main {
+      background: #ff004c;
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(255, 0, 76, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .cta-main:hover {
+      transform: translateY(-1px);
+      background: #ff2766;
+      box-shadow: 0 14px 32px rgba(255, 0, 76, 0.75);
+    }
+
+    .cta-main span.icon {
+      font-size: 18px;
+    }
+
+    .cta-note {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .ad-panel {
+      background: rgba(3, 10, 22, 0.9);
+      border-radius: 14px;
+      padding: 16px 14px 10px;
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .ad-title {
+      font-size: 13px;
+      opacity: 0.75;
+      margin-bottom: 6px;
+    }
+
+    .ad-box {
+      background: rgba(10, 20, 40, 0.95);
+      border-radius: 10px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 11px;
+      opacity: 0.6;
+      text-align: center;
     }
   </style>
-
-  <script>
-    setTimeout(function() {
-      window.location.href = "https://ridar.base44.app";
-    }, 2500);
-  </script>
 </head>
 
 <body>
-  <div class="msg">מעביר אותך אל RidAR…</div>
-  <div class="loader"></div>
+  <div class="wrapper">
+    <div class="card">
+      <div class="brand">
+        <div class="brand-logo">R</div>
+        <div>
+          <div class="brand-name">RidAR</div>
+          <div class="brand-sub">קהילה שמחזירה אופניים גנובים לבעלים – בעזרת AI</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- טקסט וקריאה לפעולה -->
+        <div>
+          <h1>ראיתם אופניים או קורקינט חשודים? יכול להיות שהצלתם למישהו את היום.</h1>
+          <p class="subtitle">
+            RidAR מחברת בין מי שאיבדו אופניים לבין מי שמצאו כאלה שנראות "בדוק גנובות". דיווח קצר, תמונה אחת – והמערכת שלנו
+            עושה את כל הצלבת הנתונים בשבילכם.
+          </p>
+
+          <ul class="bullets">
+            <li>מדווחים בקלות על גניבה או מציאה של אופניים/קורקינט.</li>
+            <li>המערכת בודקת התאמות בעזרת ניתוח תמונה מבוסס בינה מלאכותית.</li>
+            <li>אם יש התאמה – הבעלים מקבלים מיקום וקשר ישירות אליכם.</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="cta-main" href="https://ridar.base44.app" target="_blank" rel="noopener">
+              <span class="icon">🚲</span>
+              <span>כניסה ל-RidAR</span>
+            </a>
+            <div class="cta-note">
+              מעשה טוב אחד קטן, יכול להחזיר אופניים שלמות למישהו אחר.
+            </div>
+          </div>
+        </div>
+
+        <!-- אזור לפרסומות AdSense (Auto Ads יטפלו בתוכן בפועל) -->
+        <div>
+          <div class="ad-panel">
+            <div class="ad-title">אזור לפרסומות רלוונטיות (AdSense)</div>
+            <div class="ad-box">
+              ייתכן שייקח קצת זמן עד שגוגל תתחיל להציג כאן מודעות בפועל.
+            </div>
+          </div>
+          <div class="footer-note">
+            הדף הזה מתארח ב־ridar-app.github.io ומפנה לאפליקציית RidAR.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
